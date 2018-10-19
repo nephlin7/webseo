@@ -7,8 +7,8 @@ export default {
     show(target, cb) {
          
         return TweenMax.fromTo(target, duration, 
-            {x: '-=500px'}, 
-            {x: 150, 
+            {x: '-=100'}, 
+            {x: 0, 
                 ease:Power2.easeInOut, 
                 onStart(){
                     console.log('start')

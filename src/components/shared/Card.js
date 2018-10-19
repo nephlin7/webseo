@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import Animation from "../Animation";
-import ScrollMagic, { Scene }   from "scrollmagic";
-import { TweenMax, Elastic, Power2, Bounce,  Power1 } from "gsap";
+
 
 export default class Card extends React.Component {
 
@@ -15,31 +14,6 @@ constructor( props ) {
 
 componentDidMount(cb) {
   this.dom.root = ReactDOM.findDOMNode(this);
-
-  // BLURB STUFF
-  this.controller = new ScrollMagic.Controller();
-  this.blurbTween = TweenMax.staggerFromTo('.mdl-grid', 0.5,
-      {
-          y: 50,
-          x: -50,
-          opacity: 0
-      },
-      {
-          y: 0,
-          x: 0,
-          opacity: 1
-      },
-      0.2
-  );
-  this.blurbScene = new Scene({
-      triggerElement: '.mdl-grid',
-      duration: 500,
-      offset: -200
-  })
-  .addTo(this.controller);
-  this.controller.addScene([
-    this.blurbScene
-]);
   Animation.show(this.dom.root , cb);
 }
 

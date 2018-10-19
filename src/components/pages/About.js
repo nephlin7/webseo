@@ -3,7 +3,7 @@ import Page from "./Page";
 
 export default () => 
 <>
-      <Page Title="About Page" Description="Description About">
+      <Page Title="About Page" Description="Description About" PageUrl="about">
             <div className="mdl-grid">
                   <h1>About</h1>
             </div>
